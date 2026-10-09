@@ -4,3 +4,4 @@ django-environ
 django-allauth
 psycopg[binary]
 django-bootstrap5
+gunicorn

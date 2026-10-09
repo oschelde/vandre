@@ -10,6 +10,7 @@ dependencies = [
     "django-bootstrap5>=26.3",
     "django-environ>=0.14.0",
     "django-extensions>=4.1",
+    "gunicorn>=26.2.0",
     "psycopg[binary]>=3.3.6",
 ]
 
