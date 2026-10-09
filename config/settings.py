@@ -209,7 +209,8 @@ ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FORM_CLASS = "core.forms.CustomSignupForm"
 ACCOUNT_ADAPTER = 'core.adapter.ApprovalAccountAdapter'
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False  # <--- VIGTIGT: Forhindrer autologin ved klik på link
-ACCOUNT_RATE_LIMITS = env("ACCOUNT_RATE_LIMITS", default="Off")
+# ACCOUNT_RATE_LIMITS = env("ACCOUNT_RATE_LIMITS", default="Off")
+ACCOUNT_RATE_LIMITS = env("ACCOUNT_RATE_LIMITS", default="5/m")  # <--- VIGTIGT: Forhindrer brute force login
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
