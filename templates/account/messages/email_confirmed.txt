@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans %}
+You have confirmed {{email}}, but your account is awaiting administrator approval. An email will be sent to you, when you can login.
+{% endblocktrans %}

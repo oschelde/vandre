@@ -1,0 +1,26 @@
+{% extends "account/base_manage.html" %}
+{% load allauth i18n %}
+{% load django_bootstrap5 %}
+{% block head_title %}
+  {% trans "Sign Out" %}
+{% endblock head_title %}
+{% block content %}
+  <div id="col-box4">{% include "core/include/box-col4.html" %}</div>
+  {% element h1 %}
+  {% trans "Sign Out" %}
+{% endelement %}
+{% element p %}
+{% trans "Are you sure you want to sign out?" %}
+{% endelement %}
+{% url 'account_logout' as action_url %}
+{% element form method="post" action=action_url no_visible_fields=True %}
+{% slot body %}
+{% csrf_token %}
+{{ redirect_field }}
+{% endslot %}
+{% slot actions %}
+<div class="text-start">{% bootstrap_button button_type="submit" content=_("Sign Out") %}</div>
+{% endslot %}
+{% endelement %}
+<div id="box-end">{% include "core/include/box-end.html" %}</div>
+{{% endblock content %}

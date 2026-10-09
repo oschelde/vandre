@@ -1,0 +1,26 @@
+{% load static %}
+{% load i18n %}
+<form class="row gy-2 gx-3 align-items-center form-horizontal"
+      action="{% url 'set_language' %}"
+      method="post">
+  {% csrf_token %}
+  <div class="col-auto">
+    <input name="next"
+           class="form-control me-2"
+           type="hidden"
+           value="{{ redirect_to }}" />
+  </div>
+  <div class="col-auto">
+    <select class="form-select form-select-sm d-flex justify-content-sm-end align-items-sm-center"
+            name="language"
+            style="width: auto"
+            onchange="this.form.submit()">
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+      {% for lang in LANGUAGES %}
+        <option value="{{ lang.0 }}"
+                {% if lang.0 == LANGUAGE_CODE %} selected="selected" {% endif %}>{{ lang.1 }} ({{ lang.0 }})</option>
+      {% endfor %}
+    </select>
+  </div>
+</form>
