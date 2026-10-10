@@ -8,4 +8,5 @@ def site_info(request):
         'ALLOWED_HOSTS': settings.ALLOWED_HOSTS,
         'CSRF_TRUSTED_ORIGINS': settings.CSRF_TRUSTED_ORIGINS,
         'HTTP_ORIGIN': request.META.get('HTTP_ORIGIN', 'Ingen Origin fundet'),
+        'REMOTE_ADDR': request.META.get('REMOTE_ADDR', 'Ingen IP fundet'),
     }
