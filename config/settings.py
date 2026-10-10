@@ -188,15 +188,6 @@ MAILERS = {
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
 ADMIN_NEW_USER = env.list("ADMIN_NEW_USER", default=[])
 
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-# # Sparkpost email
-# EMAIL_HOST = env.str("SP_EMAIL_HOST")
-# EMAIL_PORT = env.str("SP_EMAIL_PORT")
-# EMAIL_HOST_USER = env.str("SP_EMAIL_HOST_USER")
-# EMAIL_HOST_PASSWORD = env.str("SP_EMAIL_HOST_PASSWORD")
-# EMAIL_USE_TLS = env.bool("SP_EMAIL_USE_TLS")
-
 AUTH_USER_MODEL = "core.User"
 
 AUTHENTICATION_BACKENDS = [
@@ -212,8 +203,6 @@ ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FORM_CLASS = "core.forms.CustomSignupForm"
 ACCOUNT_ADAPTER = 'core.adapter.ApprovalAccountAdapter'
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False  # <--- VIGTIGT: Forhindrer autologin ved klik på link
-# ACCOUNT_RATE_LIMITS = env("ACCOUNT_RATE_LIMITS", default="Off")
-# ACCOUNT_RATE_LIMITS = env("ACCOUNT_RATE_LIMITS", default="5/m")  # <--- VIGTIGT: Forhindrer brute force login
 ACCOUNT_RATE_LIMITS = False
 
 LOGIN_REDIRECT_URL = "home"

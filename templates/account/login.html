@@ -53,18 +53,16 @@
 {% endif %}
 <div id="box-end">{% include "core/include/box-end.html" %}</div>
 
-
+{% comment %}
 <div style="background: #fff3cd; color: #856404; padding: 15px; border: 1px solid #ffeeba; margin-bottom: 20px; font-family: monospace;">
     <strong>Debug Info:</strong><br>
-    {% comment %}
     Django ALLOWED_HOSTS: {{ ALLOWED_HOSTS }}<br>
     Django CSRF_TRUSTED_ORIGINS: {{ CSRF_TRUSTED_ORIGINS }}<br>
-    {% endcomment %}
     Browser/Proxy HTTP_ORIGIN: {{ HTTP_ORIGIN }}<br>
     Browser/Proxy REMOTE_ADDR: {{ REMOTE_ADDR }}<br>
     Account Rate Limits: {{ ACCOUNT_RATE_LIMITS }}<br>
 </div>
-
+    {% endcomment %}
 
 {% endblock content %}
 {% block extra_body %}
