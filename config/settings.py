@@ -45,6 +45,9 @@ DEBUG = env("DEBUG")
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
 
+# Fortæller Django at den er bag en reverse proxy (Nginx) der håndterer SSL
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Site info
 # Project title displayed in the header
 PROJECT_TITLE = env("PROJECT_TITLE")
