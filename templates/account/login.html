@@ -51,6 +51,13 @@
 {% if SOCIALACCOUNT_ENABLED %}
   {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
 {% endif %}
+
+<div style="background: #fff3cd; color: #856404; padding: 15px; border: 1px solid #ffeeba; margin-bottom: 20px; font-family: monospace;">
+    <strong>CSRF Debug Info:</strong><br>
+    Django CSRF_TRUSTED_ORIGINS: {{ DEBUG_CSRF_TRUSTED_ORIGINS }}<br>
+    Browser/Proxy HTTP_ORIGIN: {{ DEBUG_HTTP_ORIGIN }}
+</div>
+
 <div id="box-end">{% include "core/include/box-end.html" %}</div>
 {% endblock content %}
 {% block extra_body %}
