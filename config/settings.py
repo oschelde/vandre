@@ -43,7 +43,7 @@ DEBUG = env("DEBUG")
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=["Not set in .env file"])
 
 # Fortæller Django at den er bag en reverse proxy (Nginx) der håndterer SSL
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
